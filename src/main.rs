@@ -2,7 +2,8 @@ use yew::prelude::*;
 
 /* Messages */
 enum MsgApp {
-    List,
+    ListUsers,
+    AddUser,
 }
 enum MsgList {
     RemoveItem,
@@ -12,6 +13,7 @@ enum MsgList {
 struct App {
     section: u8,
 }
+struct Header;
 struct ListItem {
     id: u8,
     name: String,
@@ -20,6 +22,13 @@ struct List {
     items: Vec<ListItem>,
 }
 
+/* Properties */
+#[derive(Properties, PartialEq)]
+struct HeaderProps {
+    children: Children,
+}
+
+/* Implementations */
 impl Component for App {
     type Message = MsgApp;
     type Properties = ();
@@ -32,16 +41,50 @@ impl Component for App {
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            MsgApp::List => {
+            MsgApp::ListUsers => {
                 self.section = 0;
                 true
-            }
+            },
+            MsgApp::AddUser => {
+                self.section = 1;
+                true
+            },
         }
     }
 
-    fn view(&self, _ctx: &Context<Self>) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <List />
+            <>
+                <Header>
+                    <div class="logo-area">
+                        <h1>{"Compraqui"}</h1>
+                    </div>
+                    <div class="options">
+                        <button onclick={ctx.link().callback(|_| MsgApp::ListUsers)}>{"List Users"}</button>
+                        <button onclick={ctx.link().callback(|_| MsgApp::AddUser)}>{"Add User"}</button>
+                    </div>
+                    if self.section == 0 {
+                        <List />
+                    } else {
+                        {"HI"}
+                    }
+                </Header>
+            </>
+        }
+    }
+}
+
+impl Component for Header {
+    type Message = ();
+    type Properties = HeaderProps;
+
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
+    }
+
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        html! {
+            { for ctx.props().children.iter() }
         }
     }
 }
