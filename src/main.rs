@@ -8,6 +8,9 @@ enum MsgApp {
 enum MsgList {
     RemoveItem,
 }
+enum MsgFormAddUser {
+    AddedUser,
+}
 
 /* Components */
 struct App {
@@ -21,6 +24,7 @@ struct ListItem {
 struct List {
     items: Vec<ListItem>,
 }
+struct FormAddUser;
 
 /* Properties */
 #[derive(Properties, PartialEq)]
@@ -66,7 +70,7 @@ impl Component for App {
                     if self.section == 0 {
                         <List />
                     } else {
-                        {"HI"}
+                        <FormAddUser />
                     }
                 </Header>
             </>
@@ -120,6 +124,24 @@ impl Component for List {
                 <p>{format!("{} - {}", item.id, item.name)}</p>
             }
         }).collect()
+    }
+}
+
+impl Component for FormAddUser {
+    type Message = MsgFormAddUser;
+    type Properties = ();
+
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
+    }
+
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        html! {
+            <form method="POST">
+                <input type="text" placeholder="Name"/>
+                <input type="submit" value="Add"/>
+            </form>
+        }
     }
 }
 
