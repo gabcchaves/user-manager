@@ -18,6 +18,7 @@ body {
 	font-family: 'Fira Sans', sans-serif;
 	transition: 0.2s;
 	color: var(--graphite-gray);
+	box-sizing: border-box;
 }
 
 button, input {
