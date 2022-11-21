@@ -24,6 +24,7 @@ body {
 button, input {
 	all: unset;
 	border-radius: 3px;
+	height: 50px;
 }
 
 input:not(input[type=submit]) {
@@ -32,4 +33,15 @@ input:not(input[type=submit]) {
 
 a {
 	text-decoration: none;
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-dark {
+	background-color: var(--eminence);
+	color: white;
 }
