@@ -2,9 +2,11 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::routes::{
     login::Login,
+    register::Register,
 };
 
 pub mod login;
+pub mod register;
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -22,7 +24,7 @@ pub fn switch(routes: &Route) -> Html {
             <Login/>
         },
         Route::Register => html! {
-            <h1>{"Register"}</h1>
+            <Register/>
         },
         Route::NotFound => html! {
             <h1>{"NotFound"}</h1>
