@@ -3,6 +3,7 @@
 /* Colors */
 :root {
 	--eminence: #6C3082;
+	--dark-purple: #301934;
 	--graphite-gray: #4B4E53;
 	--old-wood: #F0EEE4;
 	--medium-red: #ac0000;
@@ -16,7 +17,8 @@ body {
 
 * {
 	font-family: 'Fira Sans', sans-serif;
-	transition: 0.2s;
+	font-size: 18px;
+	transition: 0.3s !important;
 	color: var(--graphite-gray);
 	box-sizing: border-box;
 }
@@ -25,23 +27,41 @@ button, input {
 	all: unset;
 	border-radius: 3px;
 	height: 50px;
+	margin: 3px 0;
 }
 
 input:not(input[type=submit]) {
 	border: 1px solid var(--graphite-gray);
+	padding-left: 10px;
+}
+
+input[type=number] {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
 }
 
 a {
 	text-decoration: none;
 }
 
-button {
+button, input[type=submit] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .button-dark {
 	background-color: var(--eminence);
 	color: white;
+	font-weight: bold;
+}
+
+.button-dark:hover {
+	background-color: var(--dark-purple);
+	text-shadow: 0 0 3px white;
+}
+
+input[type=submit], button[type=submit] {
+	margin: 6px 0;
 }
