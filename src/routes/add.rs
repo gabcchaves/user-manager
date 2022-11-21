@@ -26,7 +26,7 @@ impl Component for Add {
                 <h1>{"Add User"}</h1>
                 <form id="form-add">
                     <input name="name" type="text" placeholder="Name"/>
-                    <input type="submit" value="Add"/>
+                    <input class="button-dark" type="submit" value="Add"/>
                 </form>
             </section>
         }

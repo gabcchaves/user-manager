@@ -24,7 +24,7 @@ impl Component for Login {
                 <form id="form-login">
                     <input name="id" type="number" placeholder="ID"/>
                     <input name="password" type="password" placeholder="Password"/>
-                    <input type="submit" value="Log In"/>
+                    <input class="button-dark" type="submit" value="Log In"/>
                 </form>
                 <Link<Route> to={Route::Register}>{"Not registered?"}</Link<Route>>
             </section>

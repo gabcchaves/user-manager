@@ -25,7 +25,7 @@ impl Component for Register {
                     <input name="name" type="text" placeholder="Name"/>
                     <input name="password" type="password" placeholder="Password"/>
                     <input name="password_confirmation" type="password" placeholder="Password"/>
-                    <input type="submit" value="Register"/>
+                    <input class="button-dark" type="submit" value="Register"/>
                 </form>
                 <Link<Route> to={Route::Login}>{"Already registered?"}</Link<Route>>
             </section>
