@@ -4,11 +4,14 @@ use crate::routes::{
     login::Login,
     register::Register,
     users::Users,
+    add::Add,
 };
 
 pub mod login;
 pub mod register;
 pub mod users;
+pub mod add;
+
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -36,7 +39,7 @@ pub fn switch(routes: &Route) -> Html {
             <Users/>
         },
         Route::Add => html! {
-            <h1>{"Add User"}</h1>
+            <Add/>
         },
         Route::NotFound => html! {
             <h1>{"NotFound"}</h1>
