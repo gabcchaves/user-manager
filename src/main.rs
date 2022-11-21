@@ -1,6 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::routes::Route;
+use user_manager::routes::Route;
+use user_manager::routes::switch;
 
 #[function_component(App)]
 fn app() -> Html {
