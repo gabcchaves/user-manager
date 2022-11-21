@@ -14,7 +14,9 @@ impl Component for Header {
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self
+        Self {
+            user_logged: false,
+        }
     }
 
     // TODO: fn update()
