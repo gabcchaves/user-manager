@@ -11,7 +11,7 @@ fn app() -> Html {
     html! {
         <BrowserRouter>
             <Header/>
-            <div id="main-container">
+            <div id="container-main">
                 <Switch<Route> render={Switch::render(switch)}/>
             </div>
         </BrowserRouter>
