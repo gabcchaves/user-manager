@@ -17,6 +17,10 @@
 	margin-top: 5%;
 }
 
+#form-login input[type=submit] {
+	margin-bottom: 10%;
+}
+
 @media screen and (min-width: 1081px) {
 	#form-login {
 		width: 30%;
