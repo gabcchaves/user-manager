@@ -20,7 +20,8 @@ impl Component for Login {
         let link = ctx.link();
         html! {
             <section id="container-login">
-                <form id="login-form">
+                <h1>{"Administrator"}</h1>
+                <form id="form-login">
                     <input name="id" type="number" placeholder="ID"/>
                     <input name="password" type="password" placeholder="Password"/>
                     <input type="submit" value="Log In"/>
